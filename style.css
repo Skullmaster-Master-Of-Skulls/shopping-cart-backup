@@ -1,0 +1,502 @@
+/*Background*/
+body{
+    background-color:#FFE7D6 ;
+}
+body::-webkit-scrollbar{
+    background-color: #FFF5E4;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #160a0a49;
+}
+a, a:hover   { 
+    color:#310000 ;
+    text-decoration: none;
+    } 
+
+/* Navigation bar + Footer*/
+    .nav{ 
+        background-color: #160a0a;
+        border-bottom: 1px solid black;
+        height: 70px;
+        line-height: 70px;
+        position:fixed;
+        padding-bottom:0;
+        width:100vw;
+        z-index:2;
+    }
+    .nav a{
+        width:328px;
+        height:70px;
+        color:#fcecd0;
+    }
+    .nav a img{ /*Lotus image*/
+        margin:0px 20px 0px 0px;
+        height:100%;
+        float:left;
+    }
+    a #IrohTitle{ /* Title beside lotus*/
+        padding-top:15px;
+        float:left;
+    }
+    footer {
+        background-color: #160a0a;
+        border-bottom: 1px solid black;
+        height: 70px;
+        line-height: 70px;
+        padding-top:0;
+        margin:20px,0,0,0;
+        width:100%;
+        z-index:2;
+    }
+    /*Make buttons on right hand side*/
+    #navbuttons{ 
+        position:absolute;
+        right:5px ;
+        clear: left;
+    }   
+    #contact{ 
+        position:absolute;
+        left:5px;    
+    }   
+    #copyright{
+        position:absolute;
+        right:5px;
+        color: #FFE7D6;
+    }
+    /*Nav button spacing and colour*/
+    .Navbutton{
+        margin: 0 20px 0 0;
+        Color:#FFE7D6;
+    }
+    .Contactbutton{
+        margin: 0 20px 0 0;
+        Color:#FFE7D6;
+    }
+    .nav span{
+        color:#FFE7D6;
+    }
+
+/* Content area*/
+    #content{
+        height: 100%;
+        padding-top:70px;
+        padding-left:10px;
+        margin-left:14%;
+        padding-right:10px;
+        margin-right:14%;
+        border: 1px solid #160a0a49;
+        display:grid;  
+    }
+    button{
+        border-color: #290000af;
+        background-color:#fcecd0;
+    }
+    
+    /*Category select sidebar*/
+        #Categories{ /* grid rows make it constantly float on the left, while having no products underneath*/
+            float:left; 
+            padding-right:20px;
+            margin-right:20px;
+            padding-bottom:50px;
+            padding-top:20px;
+            padding-left:10px;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            background-color: #FFF5E4;
+        }
+        #subcategories{
+            padding-left:20px;
+        }
+    
+    /*Products + Cards*/
+        #products{ /* Products will float to the right of Category selector*/
+            grid-column-start:2;
+            grid-row-start: 1;
+            padding-top:20px;
+            
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+            width: 370px; /*Smallest image size is 420px x 420px, but aspect ratios need to be normalized for cards to look good*/
+            margin-right:20px;
+            margin-bottom:20px;
+            padding-bottom:10px;
+            float:left;
+            background-color: #FFF5E4;
+        }
+        .card button{
+            width:40%;
+            margin-right:10%;
+            margin-left:5%;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .container {
+            padding: 2px 16px;
+        }
+				
+				
+    /* Admin Page Card Buttons */
+            #adminButtons {
+                    text-align: center;
+            }
+            
+            #adminButtons button {
+                    width: 60%;
+                    margin: 5px;
+            }
+    
+
+    /* Overlay for Add/Edit item + Login + View item*/
+            #overlay{
+                position: fixed; /* Sit on top of the page content */
+                /*display: none; /* Hidden by default */
+                width: 100%; /* Full width (cover the whole page) */
+                height: 100%; /* Full height (cover the whole page) */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #fff5e4a1; /* Black background with opacity */
+                z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+                cursor: pointer; /* Add a pointer on hover */
+            }
+            #Additem{
+                width: 30%;
+                height: 56%;
+                top: 12%;
+                left: 36.5%;
+                right: 0;
+                bottom: 0;
+                padding-left: 20px;
+                position: absolute;
+                background-color: #FFF5E4;
+                border: 3px solid;
+                border-color: #290000;
+                border-radius: 3px;
+                z-index: 4;
+                cursor: default;
+            }
+            #payment-success-overlay{
+                position: fixed; /* Sit on top of the page content */
+                /*display: none; /* Hidden by default */
+                width: 100%; /* Full width (cover the whole page) */
+                height: 100%; /* Full height (cover the whole page) */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #fff5e4a1; /* Black background with opacity */
+                z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+                cursor: pointer; /* Add a pointer on hover */
+            }
+            #addOverlay input{
+                margin-bottom: 4%;
+            }
+            #addOverlay select{
+                margin-bottom:4%;
+            }
+            #Edititem{
+                width: 30%;
+                height: 85%;
+                min-width:600px;
+                min-height:800px;
+                left: 36.5%;
+                padding-left: 20px;
+                margin-top:90px;
+                margin-right:auto;
+                margin-left:auto;
+                background-color: #FFF5E4;
+                border: 3px solid;
+                border-color: #290000;
+                border-radius: 3px;
+                z-index: 7;
+                cursor: default;
+                position: fixed;
+            }
+            #editOverlay input{
+                margin-bottom: 4%;
+            }
+            #editOverlay select{
+                margin-bottom:4%;
+            }
+            #editOverlay{
+                position:fixed; /* Sit on top of the page content */
+                /*display: none; /* Hidden by default */
+                width: 100%; /* Full width (cover the whole page) */
+                height: 100%; /* Full height (cover the whole page) */
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #fff5e4a1; /* Black background with opacity */
+                z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+                cursor: pointer; /* Add a pointer on hover */
+            }
+            #LabelForTextArea{
+                float:left;
+                padding-right:5px;
+            }
+            #AddItemDescription{
+                height:180px;
+                width: 380px;
+                margin-bottom:2%;
+            }
+            #AddItemPreviewImage{
+                display:block;
+                position: relative;
+                margin-right:auto;
+                margin-left:auto;
+                clear: both;
+                height:25%;
+            }
+            #Additem button{
+                Height: 7%;
+                width: 18%;
+                margin-right: 9%;
+                margin-top: -9%;
+                float: right;
+            }
+
+        /* Login popup menu */
+            #Loginmenu{
+                position:fixed;
+                right:5px;
+                top: 5px;
+                z-index:0;
+                border: 3px #440000b4 solid;
+                padding:5px;
+                background-color: #fcecd0;
+            }
+            #Loginmenu input{
+                margin-bottom:2px;
+            }
+            #Loginmenu button{
+                float:right;
+                margin-top:3px;
+                margin-right:10px;
+                margin-left:30px;
+            }
+
+        /*Create account page, from clicking create account button in login box*/
+            #CreateAccountForm{
+                width: 30%;
+                min-width:500px;
+                height: 71%;
+                min-height:560px;
+                top: 12%;
+                left: 36.5%;
+                right: 0;
+                bottom: 0;
+                padding-left:20px;
+                position: fixed;
+                background-color: #FFF5E4;
+                border: 3px solid;
+                border-color: #290000;
+                border-radius: 3px;
+                z-index: 8;
+                cursor: default;
+            }
+            #CreateAccountForm input{
+                margin-top:10px;
+                width:300px;
+            }
+            #CreateAccountForm input#PrivacyPolicyCheckbox{
+                margin-top:10px;
+                width:25px;
+            }
+            #CreateAccountForm button{
+                margin-top:10px;
+            }
+
+        /* View item popup */
+            #ViewItem{
+                width: 30%;
+                height: 71%;
+                top: 12%;
+                left: 36.5%;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                background-color: #FFF5E4;
+                border: 3px solid;
+                border-color: #310000;
+                border-radius: 3px;
+                z-index: 4;
+                cursor: default;
+            }
+            #x{
+                float:right;
+                margin-top:0px;
+                margin-right:0px;
+            }
+            #ProductImage{
+                width: 80%;
+                height: 69%;
+                margin-left: 10%;
+            }
+            #ProductDescription{
+                border: 2px solid #31000027;
+                margin-left:-2px;
+                padding-left:2px;
+                margin-bottom:7%;
+                width:100.75%;
+            }
+            #addtocart{
+                margin-left:26%;
+                margin-right:5%;
+            }
+
+        /* Cart popup */
+            #Cartbox{
+				min-width: 600px; /* Added by H: Temporary consistent sizing */
+                width: 30%;
+				    text-align: center; /* Added by H */
+                height: 71%;
+                top: 12%;
+                 left: 30%; /* Changed by H: Was 36.5% */
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                background-color: #FFF5E4;
+                border: 3px solid;
+                border-color: #310000;
+                border-radius: 3px;
+                z-index: 4;
+                cursor: default; 
+                overflow:scroll; 
+                overflow-x: hidden;   
+            }
+            #Cartbox::-webkit-scrollbar{
+                background-color: #FFF5E4;
+            }
+            #Cartbox::-webkit-scrollbar-thumb{
+                background-color: #160a0a49;
+            }
+            #cartbottom{
+                position:absolute;
+                min-width: 600px;
+                width: 30%;
+                left:30%;
+                top:76%;
+                text-align: center;
+                border-color: #310000;
+                border:solid;
+                background-color: #FFF5E4;
+                z-index: 5;
+            }
+            #Cartitem{
+                border: 2px solid #3100002f;
+                
+            }
+            .CartItemImg{
+                width: 80px;
+                height:80px;
+            }
+            .ProductName{
+                margin-right:20px;
+                margin-left:10%;
+            }
+            .CartQuantity{
+                margin-right:30px;
+            }
+            .RemoveItemButton{
+                margin-left:50px;
+                margin-right:10px;
+                margin-top:25px;
+                float:right;
+            }
+                .inlineForm {
+                    display: inline; /* Display on same line */
+                }
+
+        /*Checkout page*/
+            #Purchase{
+                right:0;
+                width:100px;
+                float:right;
+                position:relative;
+            }
+            #checkoutClear{
+                left:0;
+                width:100px;
+                float:left;
+                position:relative;
+            }
+            #total h5, #total button{
+                right:0;
+                float:right;
+            }
+            #discount{
+                color:#188d45;
+            }
+						
+            /* Privacy Policy Page */
+                .privacy-policy-buttons {
+                    width: 200px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+            /* Order History */
+                #orderHistoryItem{
+                        border: 2px solid #3100002f;
+                        
+                }
+                .small-text {
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+                /* Payment success page*/
+                #paymentsuccess{
+                    background-color: #fcecd0;
+                    border:#290000 solid 3px;
+                    border-radius: 2px;
+                    margin-top: 20%;
+                    margin-left:40%;
+                    position:fixed;
+                    z-index: 5;
+                    text-align: center;
+                    cursor:default;
+                    width:20%;
+                    min-width: 300px;
+                }
+                #receiptbutton{
+                    margin-bottom:10px;
+                }
+                #overlaybutton{
+                    position:absolute;
+                    width:100%;
+                    height:100%;
+                    z-index: 3;
+                    background-color:#160a0a00;
+                }
+                #overlaybutton2{
+                    position:fixed;
+                    width:100%;
+                    height:150%;
+                    z-index: 3;
+                    background-color:#160a0a00;
+                    
+                }
+                #returnlink{
+                    display:block;
+                    height:100%;
+                    width:100%;
+                    z-index:4;
+                }
+    
+
+
+
+
+
+
+
